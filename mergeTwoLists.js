@@ -18,7 +18,6 @@ var mergeTwoLists = function(l1, l2) {
   let preHead = list;
 
   while(l1 || l2) {
-    console.log(list);
     if (l1 === null && l2) {
       preHead.next = l2;
       preHead = preHead.next;
