@@ -37,7 +37,6 @@ var longestPalindrome = function(s) {
         if (j - i < 3) { // 最小子串
           dp[i][j] = true;
         } else { // 不是最小子串，看最大子串是否是回文子串
-          console.log( dp[i + 1][j - 1], i + 1, j - 1);
           dp[i][j] =  dp[i + 1][j - 1]
         }
       }
