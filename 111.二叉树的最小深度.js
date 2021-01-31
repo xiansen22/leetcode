@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=111 lang=javascript
+ *
+ * [111] 二叉树的最小深度
+ */
+
+// @lc code=start
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -10,9 +17,22 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var maxDepth = function(root) {
- return root === null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
+var minDepth = function(root) {
+  if (root === null) {
+    return 0;
+  }
+  const leftMinDepth = minDepth(root.left);
+  const rightMinDepth = minDepth(root.right);
+  if (root.left === null && root.right !== null) {
+    return 1 + rightMinDepth;
+  }
+  if (root.right === null && root.left !== null) {
+    return 1 + leftMinDepth;
+  }
+  return Math.min(leftMinDepth, rightMinDepth) + 1;
 };
+
+// @lc code=end
 
 const treeB = {
   val: 1,
@@ -35,4 +55,4 @@ const treeB = {
     }
   }
 }
-console.log(maxDepth(treeB))
+console.log(minDepth(treeB));
