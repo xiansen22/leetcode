@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+      }
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+    .out-wrap {
+      position: relative;
+      margin: 0 10px;
+      height: 100%;
+    }
+    .inner_wrap {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 0;
+      padding-bottom: 50%;
+      background: #f00;
+    }
+    .box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+      
+  </style>
+</head>
+<body>
+  <div class="out-wrap">
+    <div class="inner_wrap">
+      <div class="box">A</div>
+    </div>
+  </div>
+  <script src="./promise.js"></script>
+</body>
+</html>

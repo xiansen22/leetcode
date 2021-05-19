@@ -42,7 +42,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
       max = i - 1;
     } else if ( i < max && nums2[j - 1] > nums1[i]) {
       min = i + 1;
-  } else {
+    } else {
       let maxLeft;
       if (i === 0) {
         maxLeft = nums2[j - 1];
